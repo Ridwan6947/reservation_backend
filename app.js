@@ -15,9 +15,11 @@ dotenv.config({path: "./config/config.env"})
 
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Update this to match the origin of your frontend application
-    credentials: true // Allow credentials to be included in the request
-  }));
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}));
 app.use(express.json());
 app.use(cookieParser())
 dbConnection();

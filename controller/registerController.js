@@ -94,7 +94,7 @@ export const loginUser = async (req, res) => {
     const loggedInUser = await Register.findById(user._id).select("-password")
 
     const options = {
-        httpOnly: true,     // cookies can only be modified when we use httponly and secure 
+        httpOnly: false,     // cookies can only be modified when we use httponly and secure 
         secure: true,
     }
 
@@ -127,7 +127,7 @@ export const logoutUser = async (req , res) =>{
         }
     )
     const options = {
-        httpOnly: true,     // cookies can only be modified when we use httponly and secure 
+        httpOnly: false,     // cookies can only be modified when we use httponly and secure 
         secure: true,
     }
 
@@ -158,7 +158,7 @@ export const refreshAccessToken  = async (req , res) =>{
     }
 
     const options = {
-        httpOnly: true,     // cookies can only be modified when we use httponly and secure 
+        httpOnly: false,     // cookies can only be modified when we use httponly and secure 
         secure: true,
     }
 
